@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html manifest="manifest.appcache">
+    <!--<html>-->
+    <head>
+        <title>Petrol App</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content = "width = device-width, initial-scale = 1.0, minimum-scale = 1, maximum-scale = 1, user-scalable = no" />
+        <meta name="apple-mobile-web-app-title" content="PetrolApp2" />
+        <meta name="apple-mobile-web-app-capable" content="yes">
+
+        <!--On iPhone and iPod touch, the image must be 320 x 480 pixels 
+         and in portrait orientation.-->
+        <!--<link rel="apple-touch-startup-image" href="startup.png" />-->
+        <link href="startup.png"
+              rel="apple-touch-startup-image">
+
+        <!--If no sizes attribute is set, the element’s size defaults to 60 x 60-->
+        <link rel="apple-touch-icon" href="touch-icon-iphone.png">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/styles.css">
+        <script type="text/javascript">
+            (function (document, navigator, standalone) {
+                // prevents links from apps from oppening in mobile safari
+                // this javascript must be the first script in your <head>
+                if ((standalone in navigator) && navigator[standalone]) {
+                    var curnode, location = document.location, stop = /^(a|html)$/i;
+                    document.addEventListener('click', function (e) {
+                        curnode = e.target;
+                        while (!(stop).test(curnode.nodeName)) {
+                            curnode = curnode.parentNode;
+                        }
+                        // Condidions to do this only on links to your own app
+                        // if you want all links, use if('href' in curnode) instead.
+                        if ('href' in curnode && (curnode.href.indexOf('http') || ~curnode.href.indexOf(location.host))) {
+                            e.preventDefault();
+                            location.href = curnode.href;
+                        }
+                    }, false);
+                }
+            })(document, window.navigator, 'standalone');
+        </script>
+    </head>
+    <body>
+        <div class="header-container">Petrol App</div>
+        <div class="search-container">
+            <input type="text" class="searchText" pattern="[0-9]*" maxlength="5" id="search_text" placeholder="Code Postal ? "/>
+        </div>
+        <div class="button-flex">
+            <div class="roundBtn" onclick="getInfos('gazole', document.getElementById('search_text').value)">Ga</div>
+            <div class="roundBtn" onclick="getInfos('sp95', document.getElementById('search_text').value)">Sp95</div>
+            <div class="roundBtn" onclick="getInfos('sp98', document.getElementById('search_text').value)">Sp98</div>
+            <div class="roundBtn" onclick="getInfos('gpl', document.getElementById('search_text').value)">GPLc</div>
+            <div class="roundBtn" onclick="getInfos('e10', document.getElementById('search_text').value)">E10</div>
+            <div class="roundBtn" onclick="getInfos('e85', document.getElementById('search_text').value)">E85</div>
+        </div>
+        <div id="searchRes" class="searchRes">
+
+        </div>
+
+
+        <script type="text/javascript">
+            function getInfos(inType, inCP) {
+                var result = document.getElementById('searchRes');
+                if (inCP.length <= 4) {
+                    result.innerHTML = '<div class="div-table">Code postal trop court.</div>';
+                    return;
+                }
+
+                // Check Local Storage
+                if (localStorage) {
+                    var key = buildKey(inType, inCP);
+                    var data = JSON.parse(localStorage.getItem(key));
+                    if (data && data.status === 'OK') {
+                        result.innerHTML = createDivForResult(data.results);
+                        return;
+                    }
+                }
+
+                result.innerHTML = '<div class="div-table">Recherche en cours....</div>';
+                var ip = '';
+                var port = '8080';
+                var url = 'http://'+ip+':'+port+'/Petrol/api/' + "?cp=" + encodeURI(inCP) + "&type=" + encodeURI(inType);
+
+                var xhr = createCORSRequest('POST', url);
+                if (!xhr) {
+                    result.innerHTML = 'CORS not supported';
+                    return;
+                }
+
+                // Response handlers.
+                xhr.onload = function () {
+                    var data = JSON.parse(this.responseText);
+                    if (data && data.status === 'OK') {
+                        saveData(buildKey(inType, inCP), this.responseText);
+                        result.innerHTML = createDivForResult(data.results);
+                    } else {
+                        result.innerHTML = '<div class="div-table">' + data.error_message + ' (' + data.status + ')</div>';
+                    }
+                };
+
+                xhr.onerror = function () {
+                    result.innerHTML = '<div class="div-table">Une erreur est survenue ! :=(</div>';
+
+                };
+
+                xhr.send();
+
+            }
+
+            function buildKey(inType, inCP) {
+                var rightNow = new Date();
+                var res = rightNow.toISOString().slice(0, 10).replace(/-/g, "");
+                return 'PetrolApp_' + res + '_' + inCP + '_' + inType;
+            }
+
+            function saveData(inKey, inData) {
+                if (localStorage) {
+                    localStorage.setItem(inKey, inData);
+                } else {
+                    console.log("localStorage not available");
+                }
+            }
+
+            function createDivForResult(inData) {
+                var html = null;
+                if (inData.length > 0) {
+                    var infos = null;
+                    html = '<div class="div-table">';
+                    for (var i = 0; i < inData.length; i++) {
+                        infos = inData[i];
+                        html += '<div class="div-table-row">';
+                        html += '<div class="div-table-col">';
+                        html += infos.price + '€';
+                        html += '</div>';
+                        html += '<div class="div-table-col">';
+                        html += infos.addr;
+                        html += '</div>';
+                        html += '</div>';
+                    }
+                    html += '</div>';
+                } else {
+                    html = '<div class="div-table">Aucune station disponible avec ces critères.</div>';
+                }
+
+                return html;
+            }
+
+            // references : https://www.html5rocks.com/en/tutorials/cors/
+            function createCORSRequest(method, url) {
+                var xhr = new XMLHttpRequest();
+                if ("withCredentials" in xhr) {
+                    // XHR for Chrome/Firefox/Opera/Safari.
+                    xhr.open(method, url, true);
+                } else if (typeof XDomainRequest != "undefined") {
+                    // XDomainRequest for IE.
+                    xhr = new XDomainRequest();
+                    xhr.open(method, url);
+                } else {
+                    // CORS not supported.
+                    xhr = null;
+                }
+                return xhr;
+            }
+        </script>
+    </body>
+</html>

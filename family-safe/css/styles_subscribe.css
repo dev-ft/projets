@@ -1,0 +1,370 @@
+/*
+    Author     : Charlie
+*/
+
+/*------------------- FONT ---------------------*/
+
+@font-face {
+    font-family: "OpenSans-Light";
+    src: url('OpenSans-Light.ttf');
+}
+
+/*------------- MOBILE FIRST METHOD --------------*/
+body    {
+    background-color: #2C3338;
+    margin: 0;
+    font-size: 12px;
+}
+
+.a_flex    {
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+}
+
+#continue {
+  display: none;
+}
+
+#continue_text_flex {
+  display: flex;
+  justify-content: center;
+  padding: 0.80em;
+  margin-top: 1em;
+}
+
+#continue_text {
+      width: 290px;
+      padding: 0.80em;
+      box-sizing: border-box;
+      border: none;
+      border-radius: 4px;
+      background-color: #2ebc3b;
+      color: white;
+      font-size: 2em;
+      text-decoration: none;
+      text-align: center;
+      font-weight: normal;
+}
+
+  #continue_text:focus   {
+      outline: none;
+}
+
+  #continue_text:hover   {
+      background-color: #4fbc59;
+}
+
+#subscribe_validate {
+  font-family: "OpenSans-Light";
+  font-size: 1.8em;
+  color: white;
+  margin-top: 0;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+#fa_flex {
+  display: flex;
+  justify-content: center;
+}
+
+.fa {
+  font-size: 17em !important;
+  color: #2EBC3B;
+}
+
+
+#error_message  {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1em;
+  font-family: OpenSans-Light;
+  font-weight: normal;
+  font-size: 1.3em;
+  color: #ff4a4a;
+}
+
+/*
+    _______________________________________________________
+    ---------------------  IMAGE LOGO ---------------------
+
+*/
+#logo_align    {
+    text-align: center;
+}
+
+#logo   {
+    width: 6em;
+    cursor: pointer;
+}
+
+/*
+    _______________________________________________________
+*/
+
+.h_flex    {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+h1  {
+    color: white;
+    font-family: "OpenSans-Light";
+    font-weight: normal;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 2.8em;
+}
+
+h2  {
+    color: white;
+    font-family: "OpenSans-Light";
+    font-weight: normal;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1.8em;
+}
+
+form   {
+    text-align: center;
+    margin-top: 1em;
+}
+/*
+    _____________________________________________________
+    ------------------ INPUT FIRSTNAME ------------------
+
+*/
+.fName_flex    {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1em;
+}
+
+#firstname {
+    width: 280px;
+    padding: 0.80em ;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 4px;
+    background-color: #3B4148;
+    color: white;
+    font-size: 1.3em;
+    font-family: "OpenSans-Light";
+
+}
+
+#firstname:focus   {
+    outline: none;
+}
+
+#firstname:hover   {
+    background-color: #40474b;
+}
+/*
+    _____________________________________________________
+    ------------------ INPUT LASTNAME ------------------
+
+*/
+.lName_flex {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1em;
+}
+
+#lastname {
+    width: 280px;
+    padding: 0.80em ;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 4px;
+    background-color: #3B4148;
+    color: white;
+    font-size: 1.3em;
+    font-family: "OpenSans-Light";
+}
+
+#lastname:focus   {
+    outline: none;
+}
+
+#lastname:hover{
+    background-color: #40474b;
+}
+/*
+    _____________________________________________________
+    ---------------- INPUT EMAIL ---------------------
+*/
+.email_flex    {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1em;
+}
+
+#email  {
+    width: 280px;
+    padding: 0.80em;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 4px;
+    background-color: #3B4148;
+    color: white;
+    font-size: 1.3em;
+    font-family: "OpenSans-Light";
+}
+
+#email:focus   {
+    outline: none;
+}
+
+#email:hover   {
+    background-color: #40474b;
+}
+/*
+    _____________________________________________________
+    --------------- INPUT TELEPHONE NUMBER --------------
+*/
+.phone_flex    {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1em;
+}
+
+#telephone_number{
+    width: 280px;
+    padding: 0.80em;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 4px;
+    background-color: #3B4148;
+    color: white;
+    font-size: 1.3em;
+    font-family: "OpenSans-Light";
+}
+
+#telephone_number:focus   {
+    outline: none;
+}
+
+#telephone_number:hover   {
+    background-color: #40474b;
+}
+/*
+    _____________________________________________________
+    -------------------- INPUT PASSWORD -----------------
+*/
+.password_flex    {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1em;
+}
+
+#password   {
+    width: 280px;
+    padding: 0.80em;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 4px;
+    background-color: #3B4148;
+    color: white;
+    font-size: 1.3em;
+    font-family: "OpenSans-Light";
+}
+
+#password:focus   {
+    outline: none;
+}
+
+#password:hover   {
+    background-color: #40474b;
+}
+/*
+    _____________________________________________________
+    --------------- INPUT PASSWORD CONFIRM --------------
+*/
+.password_confirm_flex    {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1em;
+}
+
+#password_confirm   {
+    width: 280px;
+    padding: 0.80em;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 4px;
+    background-color: #3B4148;
+    color: white;
+    font-size: 1.3em;
+    font-family: "OpenSans-Light";
+}
+
+#password_confirm:focus   {
+    outline: none;
+}
+
+#password_confirm:hover   {
+    background-color: #40474b;
+}
+/*
+    _____________________________________________________
+    ------------------- INPUT SUBMIT --------------------
+
+*/
+.submit_flex    {
+    display: flex;
+    justify-content: center;
+}
+
+#submit {
+    cursor: pointer;
+    width: 280px;
+    padding: 0.80em;
+    box-sizing: border-box;
+    background-color: #2ebc3b;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 1.3em;
+    font-family: "OpenSans-Light";
+}
+
+#submit:focus   {
+    outline: none;
+}
+
+#submit:hover   {
+    background-color: #4fbc59;
+}
+
+/*
+    _____________________________________________________
+    ----------------- Connexion question ---------------
+
+*/
+.connexion_flex    {
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.connexion_question    {
+    color: #606460;
+    font-family: "OpenSans-Light";
+    font-size: 1.3em;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+/*
+    ______________________________________________________
+    ------------------------ Connexion -----------------
+
+*/
+.connexion    {
+    color: white;
+    font-family: "OpenSans-Light";
+    text-decoration: none;
+}

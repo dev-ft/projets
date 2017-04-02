@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--<html manifest="manifest.appcache">-->
+<html>
+    <head>
+        <title>Petrol App</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content = "width = device-width, initial-scale = 1.0, minimum-scale = 1, maximum-scale = 1, user-scalable = no" />
+        <meta name="apple-mobile-web-app-title" content="PetrolApp2" />
+        <meta name="apple-mobile-web-app-capable" content="yes">
+
+        <!--On iPhone and iPod touch, the image must be 320 x 480 pixels 
+         and in portrait orientation.-->
+        <!--<link rel="apple-touch-startup-image" href="startup.png" />-->
+        <link href="startup.png"
+              rel="apple-touch-startup-image">
+
+        <!--If no sizes attribute is set, the element’s size defaults to 60 x 60-->
+        <link rel="apple-touch-icon" href="touch-icon-iphone.png">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+        <style>
+
+            body {
+                font-size: 14px;
+                background-color: greenyellow;
+            }
+
+            .warning {
+                border: 2px solid red;
+                font-size: 3em;
+                color: red;
+            }
+        </style>
+
+
+    </head>
+    <body>
+        <div class="header-container">Petrol App</div>
+
+        <div class="warning">
+            Impossible de se connecter au réseau...
+        </div>
+
+    </body>
+</html>

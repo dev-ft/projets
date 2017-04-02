@@ -1,0 +1,17 @@
+CACHE MANIFEST
+# Modifier la version pour forcer le reload du cache
+# Version 0.0.1
+
+CACHE:
+css/normalize.css
+css/styles.css
+touch-icon-iphone.png
+startup.png
+offline.html
+
+FALLBACK:
+/ offline.html
+
+NETWORK:
+# This will prevent other network resources from being accessed.
+*

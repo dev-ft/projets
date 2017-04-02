@@ -1,0 +1,12 @@
+h1 {
+	text-align: center;
+	color: white;
+	background-color: #438897;
+}
+
+.flex_iframe {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+
+}

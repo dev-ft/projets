@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <title>Connexion</title>
+  <meta charset="utf-8"/>
+  <link rel="stylesheet" type="text/css" href="css/styles_index.css"/>
+  <script type="text/javascript" src="js/index_errors.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <div class="a_flex">
+    <a href="index.html" id="logo_align">
+      <img id="logo" src="css/images/logo.png"/>
+    </a>
+  </div>
+  <div class="h_flex">
+    <h1>Family Safe</h1>
+  </div>
+  <div class="h_flex">
+    <h2>Votre famille en sécurité</h2>
+  </div>
+  <form id="indexForm" onsubmit="indexConnect(this); return false;">
+    <div id="email_flex">
+      <input id="email" type="email" name="email" placeholder="Courriel" required/>
+    </div>
+    <div id="password_flex">
+      <input id="password" type="password" name="password" placeholder="Mot de passe" required/>
+    </div>
+    <!-- error message -->
+    <div id="error_message"></div>
+    <div id="submit_flex">
+      <input id="submit" type="submit" value="Valider"/>
+    </div>
+    <div id="loader_flex">
+      <div id="loader"></div>
+    </div>
+  </form>
+  <div class="a_flex">
+    <a href ="password.php" class="find_password">
+      Mot de passe oublié ?
+    </a>
+  </div>
+  <div class="subscribe_flex">
+    <p class="subscribe_question">
+      Pas encore membre ?
+      <a href ="subscribe.php" class="subscribe">
+        Inscription
+      </a>
+    </p>
+  </div>
+</body>
+</html>

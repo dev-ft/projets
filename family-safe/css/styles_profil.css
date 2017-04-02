@@ -1,0 +1,279 @@
+/*
+    Author     : Charlie
+*/
+
+/* --------------------------- */
+/*                             */
+/*     MOBILE FIRST METHOD     */
+/*                             */
+/* --------------------------- */
+
+/* ---------- POLICE ---------- */
+
+@font-face {
+  font-family: "OSL";
+  src: url('OpenSans-Light.ttf');
+}
+
+/* -------------------- */
+
+body, html  {
+  font-size: 12px;
+  font-family: "OSL";
+  margin: 0;
+  height: 100%;
+  background-color: #212121;
+}
+
+h1  {
+  font-size: 2.5em;
+  font-weight: normal;
+  color: white;
+  margin: 0;
+}
+
+h2  {
+  font-size: 2.5em;
+  font-weight: normal;
+  color: white;
+  margin-top: 0.30em;
+  margin-bottom: 0;
+}
+
+/* ____________________________________________ */
+/* __________ START OF HEADER NAVBAR __________ */
+
+#header-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 83.55px;
+  background-color: #2C3338;
+}
+
+/* regroup all elements into header navbar */
+.header_container  {
+  display: flex;
+  align-items: center;
+}
+
+/* ---------- LOGO ---------- */
+
+#logo_container  {
+  margin-top: 1em;
+  margin-left: 0.75em;
+  margin-right: 1em;
+  margin-bottom: 0.50em;
+}
+
+#logo {
+  width: 5.5em;
+  cursor: pointer;
+}
+
+/* ---------- ICON MENU ANIMATED ---------- */
+
+#zIndex_menu  {
+  z-index: 3;
+}
+
+.menu {
+  cursor: pointer;
+  margin-right: 1.5em;
+}
+
+.menu-visible {
+  width:100%;
+}
+
+.barOne, .barTwo, .barThree {
+  width: 35px;
+  height: 5px;
+  background-color: white;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+/* Rotate first bar */
+.change .barOne {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+  transform: rotate(-45deg) translate(-9px, 6px) ;
+}
+
+/* Fade out the second bar */
+.change .barTwo {
+  opacity: 0;
+}
+
+/* Rotate last bar */
+.change .barThree {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+  transform: rotate(45deg) translate(-8px, -8px) ;
+}
+
+/* ---------- SIDENAV OF ICON MENU ANIMATED ---------- */
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  background-color: #2C3338;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  text-align:center;
+}
+.sidenav-visible {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  background-color: #2C3338;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  text-align:center;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 8px;
+  text-decoration: none;
+  font-size: 2.5em;
+  color: #c5c5c5;
+  display: block;
+  transition: 0.3s
+}
+
+.sidenav-visible a {
+  padding: 8px 8px 8px 8px;
+  text-decoration: none;
+  font-size: 2.5em;
+  color: #c5c5c5;
+  display: block;
+  transition: 0.3s
+}
+
+.sidenav a:hover{
+  color: white;
+}
+
+.sidenav-visible a:hover{
+  color: white;
+}
+
+.sidenav-visible .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* media queries */
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav-visible a {
+    font-size: 18px;
+  }
+}
+
+/* __________ END OF HEADER NAVBAR __________ */
+/* __________________________________________ */
+
+/* container of all elements after the header navbar */
+#container  {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#h2_flex  {
+  display: flex;
+  justify-content: center;
+}
+
+#accordion_container  {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ---------- Accordion with symbols ---------- */
+button.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 300px;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+button.accordion.active, button.accordion:hover {
+    background-color: #ddd;
+}
+
+button.accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+button.accordion.active:after {
+    content: "\2212";
+}
+
+div.panel {
+    background-color: rgb(16, 16, 16);
+    width: 298px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    border-left: #ddd solid 1px;
+    border-right: #ddd solid 1px;
+}
+/* __________________________________ */
+/* __________ in accordion __________ */
+
+/* ---------- input email ---------- */
+
+#email_flex    {
+    display: flex;
+    justify-content: center;
+}
+
+#email {
+    width: 260px;
+    padding: 0.80em;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 4px;
+    background-color: #3B4148;
+    color: white;
+    font-size: 1.3em;
+}
+
+#email:focus   {
+    outline: none;
+}
+
+#email:hover   {
+    background-color: #40474b;
+
+}
+
+/* ------------------------- */

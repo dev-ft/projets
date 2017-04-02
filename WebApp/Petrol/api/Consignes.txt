@@ -1,0 +1,62 @@
+Ecrivez une api JSON qui permettra de connaitre le prix de toutes les stations services d’une commune.
+
+Vous trouverez les données ici:
+http://www.prix-carburants.gouv.fr/rubrique/opendata/
+
+Voici les spécifications:
+
+url: /?cp=X&type=Y&sort=Z
+->X: code postal (Obligatoire)
+->Y: type de carburant, peut être un des suivant: gazole, sp95, sp98, gpl, e10, e85 (Obligatoire)
+->Z: ordre de tri, soit asc, soit desc (comme en SQL pour nous simplifier la vie)  (facultatif, défaut asc si non précisé, du moins cher au plus cher).
+
+Retourne un status OK si la requête est valide et un tableau results des stations disponibles. Chaque station est un tableau contenant les clés suivants:
+- addr: adresse postale
+- price; prix du carburant demandé.
+
+Les cas d’erreurs seront signalés par un status contenant une valeur différente de OK. Voir plus bas.
+Vous rédigerez en en-tête de votre code en commentaire, la liste des code d’erreur que vous générez.
+Bonus: les données se mettrons à jour automatiquement sans intervention de votre part.
+
+Votre projet (compressez-le) et à m’envoyer par e-mail au plus tard jeudi soir. Si vous terminez avant, faites moi une démonstration et je vous laisse libre de travailler sur vos projets si celle-ci est réussie.
+
+Exemple de réponse à la requête: /?cp=83300&type=toto&sort=asc
+{
+    "status": “INVALID_TYPE”,
+    "results": [],
+    “error_message”: “Carburant non reconnu”,
+}
+
+Exemple de réponse à la requête: /?cp=83300&type=gasole&sort=asc
+{
+    "status": "OK",
+    "results": [
+        {
+            "addr": "ZI SAINT HERMENTAIRE 83300 DRAGUIGNAN",
+            "price": 11.15
+        },
+	{
+            "addr": "526 Avenue Pierre Brossolette 83300 DRAGUIGNAN",
+            "price": 11.15
+        },
+	{
+            "addr": "80 Avenue du G\u00e9n\u00e9ral Charles de Gaulle 83300 Draguignan",
+            "price": 11.49
+        },
+        {
+            "addr": "QUART.LE FLAYOSQUET 2218 AV. S. ALLENDE 83300 DRAGUIGNAN",
+            "price": 11.7
+        },
+	{
+            "addr": "127 Avenue du G\u00e9n\u00e9ral Charles de Gaulle 83300 DRAGUIGNAN",
+            "price": 11.79
+        },
+        {
+            "addr": "386 Avenue Pierre Brossolette 83300 DRAGUIGNAN",
+            "price": 11.79
+        }
+    ]
+}
+
+
+

@@ -1,0 +1,13 @@
+.postsSection {
+    margin: 10px;
+    width: 100%;
+}
+
+.post-subject {
+    font-weight: bolder;
+}
+
+.post-body {
+    margin-bottom: 10px;
+    border-bottom: 1px dotted black;
+}

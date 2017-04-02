@@ -1,0 +1,31 @@
+/*
+Theme Name:     Thème enfant
+Description:    Thème enfant de Benoit de WPserveur
+Author:         Benoit de WPserveur
+Author URI:     https://www.wpserveur.net
+Template:       tempera                       
+Version:        0.1.0
+*/
+
+#access, #nav-toggle {
+	background-color: #a07845 !important;
+}
+
+#access a, #nav-toggle span {
+	color: white !important;
+}
+
+#access a:hover {
+	background-color: #c19359 !important;
+}
+
+#site-title span a {
+	color: white !important;
+}
+
+#access ul li.current_page_item > a, 
+#access ul li.current-menu-item > a, 
+#access ul li.current_page_ancestor > a, 
+#access ul li.current-menu-ancestor > a {
+	background-color: #c19359 !important;
+}

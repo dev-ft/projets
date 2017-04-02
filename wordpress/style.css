@@ -1,0 +1,660 @@
+/*
+Theme Name:     Thème enfant (Parallax One)
+Description:    Thème enfant en one page 
+Author:         Charlie
+Template:       Parallax-One                      
+Version:        0.1.0
+*/
+
+
+/*===================== POLICES ========================*/
+
+@font-face	{
+    font-family: noodle;
+    src: url("polices/big_noodle_titling.ttf");
+}
+
+/*=============================================================*/
+/*                     MOBILE FIRST METHOD                     */
+/*=============================================================*/
+
+body {
+    font-family: noodle;
+    font-size: 14px;
+	line-height: normal;
+    
+}
+
+#background   {
+    display: none;
+}
+
+p   {
+	color: white;
+    font-size: 1.5em;
+}
+
+.mobile-bg-fix-wrap .mobile-bg-fix-img-wrap {
+    z-index: -1;
+}
+.mobile-bg-fix-wrap .mobile-bg-fix-whole-site {
+
+}
+div.overlay-layer-wrap	{
+	z-index: -1;
+}
+
+/*================ SECTION ACCUEIL ====================*/
+
+.header#masthead {
+
+}
+
+.container_bgM    {
+    position: relative;
+    color: white;
+ 
+}
+
+.container_bgM img   {
+    width: 100%
+}
+
+#pizzeria {
+    font-size: 4em;
+    position: absolute;
+    top: 8%;
+    width: 100%;
+    text-align: center;
+    text-shadow: 3px 3px black;
+    color: whitesmoke;
+}
+
+#infos_pizzas    {
+    font-size: 2em;
+    position: absolute;
+    top: 39%;
+    width: 100%;
+    text-align: center;
+    text-shadow: 3px 3px black;
+    color: whitesmoke;
+}
+
+#infos_livraison    {
+    font-size: 2em;
+    position: absolute;
+    top: 52%;
+    width: 100%;
+    text-align: center;
+    text-shadow: 3px 3px black;
+    color: whitesmoke;
+}
+
+#btn_menu    {
+    font-size: 2em;
+    position: absolute;
+    top: 73%;
+    left: 1%;
+    width: 100%;
+    text-shadow: 3px 3px black;
+    color: whitesmoke;
+}
+
+#btn_commande    {
+    font-size: 2em;
+    position: absolute;
+    top: 86%;
+    left: 0.7%;
+    width: 100%;
+    text-shadow: 3px 3px black;
+    color: whitesmoke;
+}
+
+/* lien non visité + lien visité + lien sélectionné */
+#href_commande:link, :visited, :active   {
+    color: white !important;
+    text-decoration: underline;
+}
+
+#href_commande:hover    {
+    color: whitesmoke;
+}
+
+#href_menu:link, :visited, :active   {
+    color: white !important;
+    text-decoration: underline;
+}
+
+href_menu:hover    {
+    color: whitesmoke;
+}
+
+/*============= SECTION PRÉSENTATION ==================*/
+
+.container_ra    {
+    display: flex;
+    justify-content: center;
+}
+
+#ruban-acceuil    {
+    width: 100%;
+    height: 64px;
+    background-color: #dd502a;
+}
+
+#ruban-date    {
+    height: 80px;
+    width: 100px;
+    margin: auto;
+}
+#ruban-date  img  {
+    height: 80px;
+    width: auto;
+}
+
+#date    {
+    
+}
+
+.border-bottom-hover:hover {
+    border-bottom-color: black;
+}
+
+.single-service	{
+	background: #dd502a;
+    font-weight: normal;
+}
+
+.services	{
+	background-color: white;
+}
+
+.services-wrap > .service-box {
+     width: 90% !important;
+}
+
+h3.colored-text    {
+    color: black;
+    font-size: 2.5em;
+    font-weight: normal;
+    text-decoration: underline;
+}
+
+.services-wrap   {
+    padding-bottom: 5%;
+    margin-top: 8%;
+} 
+
+.single-service {
+    padding: 40px 35px 20px 35px;
+    background-color: #de6428 !important;
+}
+
+/*================= SECTION VIDEO =====================*/
+
+#container_titre    {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 3%;
+}
+
+#titre_vid    {
+    color: black;
+    font-family: noodle;
+    font-size: 1em;
+    text-decoration: underline;
+}
+
+.team {
+    text-align: center;
+    margin-bottom: 0;
+    font-size: 1.9em;
+}
+
+.team .section-overlay-layer {
+    padding-bottom: 0;
+}
+
+div.row.team-member-wrap {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-top: 0 !important;
+    background-image: url('images/fait-maison.jpg');
+	background-size: 100%;
+    padding-bottom: 7%
+}
+
+#fait-maison	{
+	width: 80%;
+}
+
+/*================== SECTION MENU =====================*/
+
+.testimonials .section-overlay-layer {
+    padding-bottom: 0;
+}
+
+.ruban-menus_flex	{
+	display: flex;
+    justify-content: center;
+    width: 100%;
+	background-color: #dd502a;
+}
+
+#menus	{
+	color: white;
+	margin-top: 0%;
+    margin-bottom: 0%;
+	font-size: 3em;
+}
+
+/* texte: ø 33CM */
+#diameter	{
+    margin-bottom: 0%;
+    color: white;
+}
+
+.testimonials	{
+	background-color: #d0d0d0;
+}
+
+/* img carte menu */
+#menu    {
+    width: 100%;
+    height: 100%;
+}
+
+#container_vc    {
+    margin-top: 4%;
+    text-align: center;
+    text-decoration: underline;
+    font-size: 2.5em;
+}
+
+/* href: voir notre menu */
+/* lien non visité + lien visité + lien sélectionné */
+#notre-menu   {
+    color: black !important;
+}  
+
+/* mouse over link */
+#notre-menu:hover    {
+    color: #212121;
+}
+    
+/*================= SECTION OFFRES ====================*/
+
+#nos-offres	{
+	width: 90%;
+	height: 100%;
+}
+
+#container_vo    {
+    margin-top: 4%;
+    text-align: center;
+    text-decoration: underline;
+    font-size: 2.5em;
+}
+
+/* href: voir nos offres */
+/* lien non visité + lien visité + lien sélectionné */
+#offres  {
+    color: black !important;
+}
+
+/* mouse over link */
+#offres:hover    {
+    color: #212121;
+}
+
+.ruban-offres	{
+	display: flex;
+    justify-content: center;
+    width: 100%;
+    color: white;
+    background-color: #dd502a;
+}
+
+/* texte: nos offres */
+h12   {
+    font-size: 3em;
+}
+
+.container    {
+    padding-top: 4%;
+    padding-bottom: 4%;
+}
+
+.call-to-action .section-overlay-layer {
+    background-color: #d0d0d0;
+    padding-top: 0;
+    padding-bottom: 0;
+
+}
+
+/*================= SECTION CONTACT ===================*/
+
+.contact-info {
+    background-color: #dd502a;
+}
+
+.contact-info .icon-container {
+	margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.contact-info .section-overlay-layer {
+    padding-top: 6%;
+    padding-bottom: 0%;
+}
+
+/* texte: lignes 1 (phone, map, clock) */
+.huet-line1 {
+    color: black;
+    font-size: 2.5em;
+    margin-bottom: 0.10em;
+    text-decoration: underline;
+}
+
+/* texte: lignes restantes */
+.huet-line2 {
+    color: white;
+    font-size: 2.5em;
+}
+
+/* numéro de téléphone */
+.huet-line2 a:link {
+    color:white;
+    font-size: 1.9em;
+}
+
+/* espace entre icones (phone, map, clock) */
+.col-sm-4.contact-link-box.col-xs-12    {
+    padding-bottom: 5%;
+}
+
+/* texte: (phone, map, clock) */
+a.strong   {
+	font-size: 2em;
+    color: white;
+    font-weight: normal;
+}
+
+/* icône phone */
+span.fa.icon-icon-phone.colored-text	{
+	color: white;
+	font-size: 4em;
+}
+
+/* icône map */
+span.fa.icon-map-alt.colored-text	{
+	color: white;
+	font-size: 4em;
+}
+
+/* icône clock */
+span.fa.icon-clock-alt.colored-text	{
+	color: white;
+	font-size: 4em;
+}
+
+/*================= SECTION FOOTER =====================*/
+
+.footer    {
+    padding-top: 5.3%;
+    padding-bottom: 0%;
+    background-color: #dd502a;
+}
+
+/* texte: suivez-nous */
+.parallax_one_copyright_content    {
+    color: black !important;
+    font-size: 2.5em;
+    text-decoration: underline;
+}
+
+/* ==== icône facebook & google+ ==== */
+
+/* couleur de fond & taille */
+.transparent-text-dark {
+	color: white;
+    font-size: 3em;
+}
+
+/* ==== mentions légales ==== */
+
+.container_ml    {
+    display: flex;
+    justify-content: center;
+}
+
+/* texte: mentions légales */
+#mentions    {
+    color: black !important;
+    font-size: 1.5em;
+}
+
+/*=============================================================*/
+/*                        MEDIA QUERIES                        */
+/*=============================================================*/
+
+@media only screen and (min-width : 400px)    {
+    
+    body   {
+        font-size: 16px;
+    }
+    
+    #titre_vid    {
+        font-size: 1.1em;
+    }
+        
+}
+
+@media only screen and (min-width : 468px)    {
+    
+    body   {
+        font-size: 18px;
+    }
+    
+    #pizzeria    {
+        top: 7%;
+        font-size: 5em;
+    }
+    
+    .intergeo_map_canvas    {
+        height: 350px !important;
+    }
+}
+
+@media only screen and (min-width : 500px)    {
+    
+    body   {
+        font-size: 19.5px;
+    }
+}
+
+@media only screen and (min-width : 554px)    {
+    
+    #btn_menu    {
+        top: 77%;
+    }
+    
+    #btn_commande    {
+        top: 89%;
+    }
+    
+    #infos_pizzas    {
+        top: 43%;
+    }
+    
+    #infos_livraison    {
+        top: 53.5%;
+    }
+}
+
+@media only screen and (min-width : 600px)    {
+    
+    body   {
+        font-size: 20px;
+    }
+    
+    #pizzeria    {
+        font-size: 6em;
+        top: 6%;
+    }
+    
+    #infos_pizzas    {
+        font-size: 2.8em;
+        top: 39%;
+    }
+    
+    #infos_livraison    {
+        font-size: 2.8em;
+        top: 52%;
+    }
+    
+    #btn_menu    {
+        font-size: 2.8em;
+        top: 73%;
+    }
+    
+    #btn_commande    {
+        font-size: 2.8em;
+        top: 86%;
+    }
+    
+    #titre_vid    {
+        font-size: 1.3em;
+    }
+    
+}
+    
+@media only screen and (min-width : 768px)   {
+
+    
+    .services-wrap > .service-box:nth-child(3n+1) {
+        margin-left: 0;
+        margin-right: 0;
+    
+    }
+    
+    #titre_vid    {
+        font-size: 1.4em;
+    }
+    
+    .huet-line2 a:link  {
+        font-size: 1em;
+    }
+}
+@media only screen and (min-width : 845px)    {
+    
+    #infos_pizzas    {
+        top: 35%;
+    }
+    
+    #infos_livraison    {
+        top: 47%;
+    }
+    
+    #btn_menu    {
+        top: 78%;
+    }
+    
+    #btn_commande    {
+        top: 89%;
+    }
+}
+ 
+@media only screen and (min-width : 900px) {
+
+    body   {
+	    font-size: 16px;
+    }
+    
+    p   {
+        font-size: 1.9em;
+    }
+    
+    #fait-maison    {
+        width: 70%;
+    }
+    
+    .intergeo_map_canvas    {
+        height: 450px !important;
+    }
+    
+    .services-wrap > .service-box {
+    width: 80% !important;
+    }
+    
+    .huet-line2 a:link {
+        font-size: 1.2em;
+    }
+    
+    #titre_vid    {
+        font-size: 1.6em;
+    }
+    
+    #pizzeria    {
+        width: 100%;
+        height: 145px;
+        text-align: center;
+        background-repeat: no-repeat;
+        background-image: url('images/titre.png');
+        background-position: center; 
+    }
+    
+    #infos_pizzas    {
+        text-shadow: 3px 3px black;
+        color: whitesmoke;
+        font-size: 3em;
+        top: 38%;
+    }
+    
+    #infos_livraison    {
+        text-shadow: 3px 3px black;
+        color: whitesmoke;
+        font-size: 3em;
+        top: 48%;
+    }
+    
+    #btn_menu    {
+        text-shadow: 3px 3px black;
+        color: whitesmoke;
+        font-size: 3em;
+    }
+    
+    #btn_commande    {
+        text-shadow: 3px 3px black;
+        color: whitesmoke;
+        font-size: 3em;
+    }
+    
+    img#bg-mobile    {
+        display: none;
+    }
+
+    .container_bgM  {
+        min-height: 506px;
+    }
+    
+    #background {
+  	    top: 0; 
+  	    width: 100%; 
+  	    display: block;
+        min-height: 506px;
+    }
+}
+
+@media only screen and (min-width : 1000px)    {
+    
+    .services-wrap > .service-box {
+        width: 45% !important;
+        margin-right: 0;
+        margin-left: 3%;
+    }
+    
+    .huet-line2 a:link {
+        font-size: 1.6em;
+    }
+}

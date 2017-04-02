@@ -1,0 +1,71 @@
+/*
+
+    Auteur: Charlie
+
+*/
+
+/*===================== POLICES ========================*/
+
+@font-face	{
+    font-family: noodle;
+    src: url("polices/big_noodle_titling.ttf");
+}
+
+/*=============================================================*/
+/*                     MOBILE FIRST METHOD                     */
+/*=============================================================*/
+
+body   {
+    background-color: #dd502a;
+    font-size: 14px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.container_hFlex    {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.container_pFlex    {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+h1   {
+    color: white;
+    font-size: 7em;
+    font-family: noodle;
+    font-weight: normal;
+    text-decoration: underline;
+    margin-top: 0;
+    margin-bottom: 2%;
+}
+
+h2   {
+    color: black;
+    font-size: 4.5em;
+    font-family: noodle;
+    font-weight: normal;
+    text-decoration: underline;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+p   {
+    color: white;
+    font-size: 3.5em;
+    font-family: noodle;
+    font-weight: normal;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    text-align: center;
+}
+
+
+
+
