@@ -1,0 +1,5 @@
+lat & longétitude sont float dans users
+
+dans js ( watch) -> lancer un ajax qui appel un fichier php ce dernier prend en parametre la lat et long qu'il y a dans le js
+
+le php fait un update de la lat & long de la tab users
